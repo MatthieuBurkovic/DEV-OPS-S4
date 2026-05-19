@@ -29,12 +29,12 @@ Write-Host "Starting app..."
 $npmScripts = (npm run) | Out-String
 
 if ($npmScripts -match "\sstart\s") {
-  Start-Process -FilePath "npm" -ArgumentList "run","start" `
+  Start-Process -FilePath "npm.cmd" -ArgumentList "run","start" `
     -RedirectStandardOutput "app.log" -RedirectStandardError "app.err.log"
   Write-Host "Started with: npm run start"
 }
 elseif ($npmScripts -match "\sdev\s") {
-  Start-Process -FilePath "npm" -ArgumentList "run","dev","--","--host","0.0.0.0" `
+  Start-Process -FilePath "npm.cmd" -ArgumentList "run","dev","--","--host","0.0.0.0" `
     -RedirectStandardOutput "app.log" -RedirectStandardError "app.err.log"
   Write-Host "Started with: npm run dev"
 }

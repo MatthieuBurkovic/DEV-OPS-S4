@@ -22,7 +22,7 @@ if (-not (Test-Path "$deployDir\.git")) {
 }
 
 Write-Host "Installing dependencies..."
-Set-Location $deployDir
+Set-Location "$deployDir\my-react-app"
 npm install
 
 Write-Host "Starting app..."
